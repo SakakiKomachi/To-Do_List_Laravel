@@ -34,7 +34,8 @@
                     <input name="password" type="password" class="form-control" id="password" placeholder="password">
                     <label for="password">Password</label>
                 </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+                <p>Sudah mempunyai akun? <a href="/login">Login</a></p>
             </form>
         </div>
     </div>

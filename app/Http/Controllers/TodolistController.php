@@ -34,7 +34,7 @@ class TodolistController extends Controller
             return response()->view("todolist.todolist", [
                 "title" => "Todolist",
                 "todolist" => $todolist,
-                "error" => "Todo is required"
+                "error" => "Tambahkan Task"
             ]);
         }
 

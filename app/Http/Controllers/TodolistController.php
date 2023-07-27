@@ -49,4 +49,29 @@ class TodolistController extends Controller
         return redirect()->action([TodolistController::class, 'todoList']);
     }
 
+    public function editTodo(Request $request, string $todoId)
+    {
+        $todo = $this->todolistService->findTodoById($todoId)->first();
+
+        if (!$todo) {
+            return redirect()->action([TodolistController::class, 'todoList']);
+        }
+
+        return response()->view("todolist.edit-todolist", [
+            "todo" => $todo
+        ]);
+    }
+
+    function updateTodo(Request $request, string $todoId): mixed
+    {
+        $todo = $request->input("todo");
+
+        if (empty($todo)) {
+            return redirect()->back();
+        }
+
+        $this->todolistService->updateTodo($todoId, $todo);
+
+        return redirect()->action([TodolistController::class, 'todoList']);
+    }
 }

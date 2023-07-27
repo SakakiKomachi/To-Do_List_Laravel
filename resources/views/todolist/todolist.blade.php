@@ -63,10 +63,13 @@
                         <th scope="row">{{$todo['id']}}</th>
                         <td>{{$todo['todo']}}</td>
                         <td>
-                            <form action="/todolist/{{$todo['id']}}/delete" method="post">
-                                @csrf
-                                <button class="w-100 btn btn-lg btn-danger" type="submit">Remove</button>
-                            </form>
+                            <div class="d-flex justify-content-end">
+                                <a class="btn btn-lg btn-warning mx-2" href="/todolist/{{ $todo['id']}}/edit ">Edit</a>
+                                <form action="/todolist/{{$todo['id']}}/delete" method="post">
+                                    @csrf
+                                    <button class="w-100 btn btn-lg btn-danger" type="submit">Remove</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

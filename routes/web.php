@@ -31,7 +31,8 @@ Route::controller(\App\Http\Controllers\TodolistController::class)
         Route::get('/todolist', 'todoList');
         Route::post('/todolist', 'addTodo');
         Route::post('/todolist/{id}/delete', 'removeTodo');
-        Route::post('/todolist/{id}/edit', 'editTodo');
+        Route::get('/todolist/{id}/edit', 'editTodo');
+        Route::post('/todolist/{id}/edit', 'updateTodo');
         Route::get('/date-picker', function () {
             return view('date-picker');
         });

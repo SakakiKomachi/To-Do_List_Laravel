@@ -11,4 +11,7 @@ interface TodolistService
 
     public function removeTodo(string $todoId);
 
+    public function findTodoById(string $todoId): mixed;
+
+    public function updateTodo(string $todoId, string $todo): void;
 }

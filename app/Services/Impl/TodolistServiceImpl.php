@@ -26,4 +26,18 @@ class TodolistServiceImpl implements TodolistService
     {
         TodoList::where("id", $todoId)->delete();
     }
+
+    public function findTodoById(string $todoId): mixed
+    {
+        return TodoList::where("id_user", Session::get("user_id"))
+            ->where("id", $todoId);
+    }
+
+
+    public function updateTodo(string $todoId, string $todo): void
+    {
+        TodoList::where("id", $todoId)->update([
+            "todo" => $todo
+        ]);
+    }
 }
